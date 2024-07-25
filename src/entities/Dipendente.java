@@ -2,7 +2,7 @@ package entities;
 
 import enums.TipoDipartimento;
 
-public class Dipendente {
+public abstract class Dipendente {
     //ATTRIBUTI
     private int matricola;
     private double stipendio;
@@ -14,6 +14,9 @@ public class Dipendente {
         this.stipendio = stipendio;
         this.dipartimento = dipartimento;
     }
+
+    //METODI
+    public abstract double calculateSalary();
 
     public int getMatricola() {
         return matricola;
