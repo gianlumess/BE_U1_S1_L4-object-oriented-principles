@@ -1,8 +1,6 @@
-import entities.Dipendente;
-import entities.DipendenteFullTime;
-import entities.DipendentePartTime;
-import entities.Dirigente;
+import entities.*;
 import enums.TipoDipartimento;
+import interfaces.CheckIn;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,12 +17,19 @@ public class Main {
         }*/
 
         //-------------------------ESRECIZIO 2----------------------------------
-
+//creazione istanze dipendenti
         DipendenteFullTime mario = new DipendenteFullTime(254, 1800.00, TipoDipartimento.PRODUZIONE);
         DipendentePartTime elena = new DipendentePartTime(123, 4, 9, TipoDipartimento.VENDITE);
         Dirigente tom = new Dirigente(545, 4000.00, TipoDipartimento.AMMINISTRAZIONE);
 
+        //creazione istanze volontari
+        Volontario vol1 = new Volontario("Piero", 22, "Cv");
+        Volontario vol2 = new Volontario("Marta", 25, "Cv");
+        Volontario vol3 = new Volontario("Enrico", 27, "Cv");
+
         Dipendente[] dipendenti = {mario, elena, tom};
+
+        CheckIn[] persone = {mario, elena, tom, vol1, vol2, vol3};
 
         double sommaStipendi = 0.0;
 
@@ -32,6 +37,12 @@ public class Main {
             System.out.println("Matricola: " + dipendente.getMatricola() + ", Stipedio: " + dipendente.calculateSalary());
             sommaStipendi += dipendente.calculateSalary();
         }
+
         System.out.println("Somma Stipendi: " + sommaStipendi);
+        
+        System.out.println("------------CHECK-IN-----------------");
+        for (CheckIn persona : persone) {
+            persona.checkIn();
+        }
     }
 }

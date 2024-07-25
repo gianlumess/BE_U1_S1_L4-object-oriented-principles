@@ -1,8 +1,9 @@
 package entities;
 
 import enums.TipoDipartimento;
+import interfaces.CheckIn;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements CheckIn {
     //ATTRIBUTI
     private int matricola;
     private double stipendio;
@@ -32,5 +33,10 @@ public abstract class Dipendente {
 
     public void setDipartimento(TipoDipartimento dipartimento) {
         this.dipartimento = dipartimento;
+    }
+
+    @Override
+    public void checkIn() {
+        System.out.println("Dipendente con matricola: " + matricola + " inizia il turno di lavoro.");
     }
 }
