@@ -17,7 +17,7 @@ public class DipendentePartTime extends Dipendente {
     @Override
     public double calculateSalary() {
 
-        return oreLavorative * pagaOraria;
+        return (oreLavorative * pagaOraria) * 80;
     }
 
     public int getOreLavorative() {

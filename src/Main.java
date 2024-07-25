@@ -20,17 +20,17 @@ public class Main {
 
         //-------------------------ESRECIZIO 2----------------------------------
 
-        DipendenteFullTime mario = new DipendenteFullTime(254, 1500.00, TipoDipartimento.PRODUZIONE);
-        DipendentePartTime elena = new DipendentePartTime(123, 4, 12, TipoDipartimento.VENDITE);
-        Dirigente tom = new Dirigente(545, 2200.00, TipoDipartimento.AMMINISTRAZIONE);
+        DipendenteFullTime mario = new DipendenteFullTime(254, 1800.00, TipoDipartimento.PRODUZIONE);
+        DipendentePartTime elena = new DipendentePartTime(123, 4, 9, TipoDipartimento.VENDITE);
+        Dirigente tom = new Dirigente(545, 4000.00, TipoDipartimento.AMMINISTRAZIONE);
 
         Dipendente[] dipendenti = {mario, elena, tom};
 
         double sommaStipendi = 0.0;
+
         for (Dipendente dipendente : dipendenti) {
-            double stipendio = dipendente.calculateSalary();
-            System.out.println("Matricola: " + dipendente.getMatricola() + ", Stipedio: " + stipendio);
-            sommaStipendi += stipendio;
+            System.out.println("Matricola: " + dipendente.getMatricola() + ", Stipedio: " + dipendente.calculateSalary());
+            sommaStipendi += dipendente.calculateSalary();
         }
         System.out.println("Somma Stipendi: " + sommaStipendi);
     }
